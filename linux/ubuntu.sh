@@ -25,6 +25,9 @@ echo ""
 sudo add-apt-repository ppa:noobslab/themes
 
 echo ""
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+
+echo ""
 sudo add-apt-repository ppa:snwh/pulp -y
 
 echo ""
@@ -36,6 +39,12 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsof
 
 echo""
 sudo add-apt-repository ppa:maarten-fonville/android-studio
+
+echo""
+sudo add-apt-repository \
+  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) \
+  stable"
 
 echo -e $cor "----------------------------------"
 echo -e $cor "         Executando update        "
@@ -50,30 +59,43 @@ echo ""
 
 echo -e $cor "Git"
 sudo apt-get install git
+echo ""
 
 echo -e $cor "Gimp"
 sudo apt-get install gimp
+echo ""
 
 echo -e $cor "Spotify"
 sudo apt-get install spotify-client
+echo ""
 
 echo -e $cor "Inkscape"
 sudo apt-get install inkscape
+echo ""
 
 echo -e $cor "Curl"
 sudo apt-get install curl
+echo ""
 
 echo -e $cor "Nvm"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+echo ""
 
 echo -e $cor "zsh"
 sudo apt-get install zsh
+echo ""
 
 echo -e $cor "OmgZsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo ""
+
+echo -e $cor "Byobu"
+sudo apt-get install byobu
+echo ""
 
 echo -e $cor "Unity Tweak Tool"
 sudo apt-get install unity-tweak-tool
+echo ""
 
 echo -e $corprg "Flatabulous Theme"
 sudo apt-get install flatabulous-theme
@@ -81,6 +103,14 @@ echo ""
 
 echo -e $corprg "Paper Icon Theme"
 sudo apt-get install paper-icon-theme paper-gtk-theme -y 
+echo ""
+
+echo -e $corprg "MPlayer"
+sudo apt-get install mplayer
+echo ""
+
+echo -e $corprg "Tree"
+sudo apt install tree
 echo ""
 
 echo -e "JRE"
@@ -97,6 +127,32 @@ sudo apt-get install dotnet-sdk-2.0.0
 echo -e $cor "Android Studio"
 sudo apt-get install android-studio
 
+echo -e $cor "DockerCE and Requiments"
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-get install docker-ce
+
+echo -e $cor "Docker-Compose 1.16.0"
+sudo -i
+curl -L https://github.com/docker/compose/releases/download/1.16.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+echo -e $cor "Heroku CLI"
+curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+sudo apt-get install heroku
+
+echo ""
+echo -e $corlogo "+-----------------------------------+"
+echo -e $corlogo "           Configurações             "
+echo -e $corlogo "+-----------------------------------+"
+echo ""
+
+echo -e $cor "Run docker without sudo"
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+
+echo ""
 echo -e $corlogo "+-----------------------------------+"
 echo -e $corlogo "          Instalar a Parte           "
 echo -e $corlogo "+-----------------------------------+"

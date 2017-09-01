@@ -4,23 +4,17 @@ My dotfiles
 ## Node
 
 - Create React App | [Repo](https://github.com/facebookincubator/create-react-app) :white_check_mark:
-- React Native Cli (npm install -g react-native-cli)
+- React Native Cli (npm install -g react-native-cli):white_check_mark:
 
 ## Linux
 
-- sudo apt-get install mplayer
-- sudo apt install tree 
-- docker
+- sudo apt-get install mplayer :white_check_mark:
+- sudo apt install tree :white_check_mark:
+- docker :white_check_mark:
 - eclipse
-- android studio
-- java (jvm) [Link](https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-get-no-ubuntu-16-04-pt)
-- Heroku CLI
-```bash
-sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
-curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install heroku
-```
+- android studio :white_check_mark:
+- java (jvm) [Link](https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-get-no-ubuntu-16-04-pt) :white_check_mark:
+- Heroku CLI :white_check_mark:
 
 ## Vim
 
